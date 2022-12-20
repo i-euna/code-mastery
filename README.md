@@ -1,2 +1,2 @@
-# CodingPractice
+# Coding Practice/Leetcode
 Language: Java
