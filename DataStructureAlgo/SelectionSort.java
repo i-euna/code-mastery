@@ -1,6 +1,6 @@
 class Result {
 
-    public static int[] selectionSort(int[] n) {
+    public static int[] sort(int[] n) {
          for(int i = 0; i < nums.length - 1; i++) {
             int minPointer = i;
             for(int j = i + 1; j < nums.length; j++) {
