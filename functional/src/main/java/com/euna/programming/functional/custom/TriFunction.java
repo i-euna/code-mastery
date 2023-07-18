@@ -1,4 +1,4 @@
-package com.euna.programming.functional;
+package com.euna.programming.functional.custom;
 
 public interface TriFunction<T, U, V, R> {
     R apply(T t, U u, V v);

@@ -1,5 +1,8 @@
 package com.euna.programming.functional;
 
+import com.euna.programming.functional.custom.NoArgFunction;
+import com.euna.programming.functional.custom.TriFunction;
+
 import java.util.function.Function;
 import java.util.function.BiFunction;
 
