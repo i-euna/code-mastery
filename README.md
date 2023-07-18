@@ -1,3 +1,3 @@
-# Data Structure,Algorithm,Design Patterns & Principles,OOP,Functional Programming
+# Data Structure,Algorithm,Functional Programming
 => LeetCode<br>
 => HackerRank
