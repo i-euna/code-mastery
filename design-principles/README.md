@@ -16,22 +16,22 @@ implement the interface.
 - like equals() method in java
 - helps avoid duplicate code
 ## SOLID
-=> Single Resposibility<br>
-- class should have only one reason to change
-=> Open Closed <br>
-- open for extension, closed for modifications
-- to add a new implementation, approach this in 2 ways.
+- Single Resposibility<br>
+  class should have only one reason to change<br>
+- Open Closed <br>
+  open for extension, closed for modifications<br>
+  to add a new implementation, approach this in 2 ways.
 1. extend the existing functionality to a new class, add the implementations there
-2. Use composition to accept new behaviours
+2. Use composition to accept new behaviours<br>
 => Liskov Substitution <br>
 - substituting subtype for base class should not break the code
 => Interface Segregation <br>
-- components of interface should be highly relatable, if not seperate them
+- components of interface should be highly relatable, if not seperate them<br>
 => Dependency Injection <br>
 - use abstraction in stead of concrete implementation
 - High-level modules should not depend on the low-level module but both should depend on the abstraction
 
-##Pillars of OOP
+##Pillars of OOP<br>
 => Abstraction<br>
 => Inheritance<br>
 => Encapsulation<br>
