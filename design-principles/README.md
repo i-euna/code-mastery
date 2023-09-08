@@ -36,11 +36,19 @@ implement the interface.
 
 # Pillars of OOP<br>
 ## Abstraction<br>
+-the process of simplifying complex reality by modeling classes based on the essential properties and behaviors while hiding the unnecessary details<br>
 ## Inheritance<br>
 -allows you to create a new class (subclass or derived class) by inheriting properties and behaviors (fields and methods) from an existing class (superclass or base class).<br>
 -It supports the concept of code reuse and is used to establish an "is-a" relationship between classes.<br>
 ## Encapsulation<br>
 -bundling data (attributes or fields) and methods (functions) that operate on that data into a single unit<br>
 ## Polymorphism<br>
+-the ability of objects to take on multiple forms<br>
 
 # Has-A vs Is-A
+-Neither is inherently "better" than the other<br>
+## Is-A Relationship (Inheritance)
+-Use the "Is-A" relationship when you want to model a hierarchical relationship where one class represents a more specific or specialized version of another class<br>
+- Inheritance is useful for code reuse and to establish a clear taxonomy of classes<br>
+## Has-A Relationship (Composition)
+-Use the "Has-A" relationship when you want to create complex objects by combining simpler objects<br> -Composition allows for greater flexibility and can represent more diverse and flexible relationships between classes<br>
