@@ -1,6 +1,8 @@
 # Design Principles
 
-# DRY(Don't Repeat)
+# DRY(Don't repeat yourself)
+
+# KISS(Keep it simple)
 
 # Encapsulate What Changes
 - Identify the aspects that vary and separate them from what stays the same
@@ -35,5 +37,10 @@ implement the interface.
 # Pillars of OOP<br>
 ## Abstraction<br>
 ## Inheritance<br>
+-allows you to create a new class (subclass or derived class) by inheriting properties and behaviors (fields and methods) from an existing class (superclass or base class).<br>
+-It supports the concept of code reuse and is used to establish an "is-a" relationship between classes.<br>
 ## Encapsulation<br>
+-bundling data (attributes or fields) and methods (functions) that operate on that data into a single unit<br>
 ## Polymorphism<br>
+
+# Has-A vs Is-A
