@@ -1,25 +1,33 @@
 # Design Principles
+## KISS(Keep it stupid, simple)
+- Not specific to OOP, a good practice in general
+- To improve code clarity and maintainability, the design and execution should be simple.
 
-## DRY
-Don't repeat yourself
-## KISS
-Keep it stupid, simple
-
-# Object-Oriented Design Principles Guide
+# Object-Oriented Design Principles
+## DRY(Don't repeat yourself)
+- Don't write duplicate functionality
+- Use abstraction to create generalized components
 ## Encapsulate What Changes
-- Identify the aspects that vary and separate them from what stays the same
+- Identify the aspects that vary and separate these from what stays the same
+- In Java, the variables and methods should be private by default
+- Increase the access step by step, for example: from private to protected, not private to public
 ## Favor Composition over Inheritance
-- has-a relationship should be preferred over is-a relationship
+- (if possible)has-a relationship should be preferred over is-a relationship
+- while both are ways of reusing already written functionalities, in using composition we are not bound by rigid hierarchies
+- composition allows us to switch, mix, and match components which gives better modularity and reusability
 ## Loose Coupling
-- interacting components should be independent of each other
+- Interacting components should be independent of each other
+- These components should interact with others through interfaces or abstractions
+- Allows the components to evolve independently
 ## Programming for Interface, not implementation
+- Design systems around interfaces and abstract classes, instead of concrete classes
 - Suppose, you are making a database client class, instead of making a concrete class designed to access Postgres, the interface should have the basic methods and specific DB implementations should implement the interface.
 ## Delegation
 - delegate it to the respective class
 - like equals() method in java
-- helps avoid duplicate code
+- helps avoid duplicate functionality
   
-# SOLID
+## SOLID
 ## Single Responsibility Principle<br>
 - class should have only one reason to change<br>
 ## Open Closed Principle<br>
@@ -35,6 +43,14 @@ Keep it stupid, simple
 ## Dependency Injection Principle<br>
 - use abstraction instead of concrete implementation
 - High-level modules should not depend on the low-level module but both should depend on the abstraction
+- 
+# Has-A vs Is-A
+-Neither is inherently "better" than the other<br>
+## Is-A Relationship (Inheritance)
+-Use the "Is-A" relationship when you want to model a hierarchical relationship where one class represents a more specific or specialized version of another class<br>
+- Inheritance is useful for code reuse and to establish a clear taxonomy of classes<br>
+## Has-A Relationship (Composition)
+-Use the "Has-A" relationship when you want to create complex objects by combining simpler objects<br> -Composition allows for greater flexibility and can represent more diverse and flexible relationships between classes<br>
 
 # Pillars of OOP<br>
 ## Abstraction<br>
@@ -47,10 +63,3 @@ Keep it stupid, simple
 ## Polymorphism<br>
 -the ability of objects to take on multiple forms<br>
 
-# Has-A vs Is-A
--Neither is inherently "better" than the other<br>
-## Is-A Relationship (Inheritance)
--Use the "Is-A" relationship when you want to model a hierarchical relationship where one class represents a more specific or specialized version of another class<br>
-- Inheritance is useful for code reuse and to establish a clear taxonomy of classes<br>
-## Has-A Relationship (Composition)
--Use the "Has-A" relationship when you want to create complex objects by combining simpler objects<br> -Composition allows for greater flexibility and can represent more diverse and flexible relationships between classes<br>
