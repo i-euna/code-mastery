@@ -1,19 +1,30 @@
 # Design Principles
+
 ## Table of Contents
 - [KISS](#kiss)
+- [Delegation](#delegation)
 - [DRY](#dry)
 - [Encapsulate What Changes](#encapsulate-what-changes)
 - [Favor Composition over Inheritance](#favor-composition-over-inheritance)
 - [Loose Coupling](#loose-coupling)
 - [Programming for Interface, not implementation](#programming-for-interface-not-implementation)
-- [Delegation](#delegation)
 - [SOLID](#solid)
+  - [Single Responsibility](#single-responsibility-principle)
+  - [Open Closed](#open-closed-principle)
+  - [Liskov Substitution](#liskov-substitution-principle)
+  - [Interface Segregation](#interface-segregation-principle)
+  - [Dependency Inversion](#dependency-inversion-principle)
+  
 ## KISS
 - Keep it stupid, simple
 - Not specific to OOP, a good practice in general
 - To improve code clarity and maintainability, the design and execution should be simple.
 
-# Object-Oriented Design Principles
+## Delegation
+- delegate it to the respective class, don't do everything yourself
+- like equals() method in java
+- helps avoid duplicate functionality
+
 ## DRY
 - Don't repeat yourself
 - Don't write duplicate functionality
@@ -311,44 +322,331 @@ public class Main {
     }
 }
 ```
-
-## Delegation
-- delegate it to the respective class, don't do everything yourself
-- like equals() method in java
-- helps avoid duplicate functionality
   
 ## SOLID
-## Single Responsibility Principle(SRP)<br>
+
+## Single Responsibility Principle
 - class should have only one reason to change<br>
 - if a class has more than one functionality, a coupling is introduced. In case of a change in one functionality, the other may break and will need to be tested too.<br>
-## Open Closed Principle<br>
+
+### Violation
+- In this case, Employee class is responsible for both saving the data and reporting attendence
+
+```
+public class Employee {
+    private String firstName;
+    private String lastName;
+    private int salary;
+    public long calculateSalary() {
+        //logic for calculating salary
+        return 0;
+    }
+    public void save() {
+        //logic for saving data to DB
+    }
+    public String reportAttendance() {
+        //logic for reporting attendence in office
+        return "";
+    }
+}
+```
+
+### Solution
+
+```
+public class Employee {
+    private String firstName;
+    private String lastName;
+    private int salary;
+}
+public class AttendenceReporter {
+    public String reportAttendance() {
+        //logic for reporting attendence in office
+        return "";
+    }
+}
+public class Repository {
+    public void save() {
+        //logic for saving data to DB
+    }
+}
+public class SalaryCalculator {
+    public long calculateSalary() {
+        //logic for calculating salary
+        return 0;
+    }
+}
+```
+
+## Open Closed Principle
 - open for extension, closed for modifications<br>
 - already tested code will not be modified and won't need testing<br>
 - to add a new implementation, approach this in 2 ways.
 1. extend the existing functionality to a new class, and add the implementations there
 2. Use composition to accept new behaviors <br>
-## Liskov Substitution Principle<br>
+
+### Violation
+
+```
+public class SalaryCalculator {
+    public long calculateSalary(String employeeType) {
+        if (employeeType == "X") {
+            return 100;
+        }
+        else if (employeeType == "Y") {
+            return 80;
+        }
+        else {
+            return 60;
+        }
+    }
+}
+```
+
+### Solution
+
+```
+public interface SalaryCalculator {
+    long calculateSalary();
+}
+public class DefaultSalaryCalculator implements SalaryCalculator {
+    @Override
+    public long calculateSalary() {
+        return 60;
+    }
+}
+public class EmployeeXSalaryCalculator implements SalaryCalculator {
+    @Override
+    public long calculateSalary() {
+        return 100;
+    }
+}
+public class EmployeeYSalaryCalculator implements SalaryCalculator {
+    @Override
+    public long calculateSalary() {
+        return 80;
+    }
+}
+public class SalaryCalculatorClient {
+    public long calculateSalary(SalaryCalculator calculator) {
+        return calculator.calculateSalary();
+    }
+}
+```
+
+## Liskov Substitution Principle
 - Substituting subtype for base class should not break the code
 - A subclass's object methods shouldn't require any parameters, call any variables, or return any data types that aren't returned by methods in the superclass.
-## Interface Segregation Principle<br>
+
+### Violation
+
+```
+public abstract class Shape {
+    public abstract int calcualteArea();
+    public abstract int getDiameter();
+}
+public class Circle extends Shape {
+    @Override
+    public int calcualteArea() {
+        return 0;
+    }
+
+    @Override
+    public int getDiameter() {
+        return 0;
+    }
+}
+class Square extends Shape {
+
+    @Override
+    public int calcualteArea() {
+        return 0;
+    }
+
+    @Override
+    public int getDiameter() {
+        //don't need this for square
+        return 0;
+    }
+}
+```
+
+### Solution
+
+```
+public interface Shape {
+    public int calculateArea();
+}
+interface Circle extends Shape {
+    int getDiameter();
+}
+public class CircleImpl implements Circle {
+    @Override
+    public int calculateArea() {
+        return 0;
+    }
+
+    @Override
+    public int getDiameter() {
+        return 0;
+    }
+}
+interface Square extends Shape {
+    // Square doesn't have a diameter, so this method is not required here.
+}
+public class SquareImpl implements Square {
+    @Override
+    public int calculateArea() {
+        return 0;
+    }
+}
+```
+
+## Interface Segregation Principle
 - components of an interface should be highly relatable, if not separate them<br>
 - class should not implement an interface if it does not use it<br>
 - It's like having various tools in a box and every tool has a specific function. If you only need a hammer, you only take the hammer and not a screwdriver. It ensures that classes only use the tools they need.
-## Dependency Injection Principle<br>
+
+###Violation
+
+```
+public interface Worker {
+    void code();
+    void manage();
+}
+public class Developer implements Worker{
+    @Override
+    public void code() {
+
+    }
+
+    @Override
+    public void manage() {
+    //developer does not need to manage
+    }
+}
+public class Manager implements Worker{
+    @Override
+    public void code() {
+        //manager does not need to code
+    }
+
+    @Override
+    public void manage() {
+
+    }
+}
+
+```
+
+### Solution
+
+```
+public interface Workable {
+    void work();
+}
+public interface Managerial {
+    void manage();
+}
+public class Developer implements Workable{
+    @Override
+    public void work() {
+
+    }
+}
+public class Manager implements Managerial{
+    @Override
+    public void manage() {
+
+    }
+}
+
+```
+
+## Dependency Inversion Principle
 - use abstraction instead of concrete implementation
 - High-level modules should not depend on the low-level module but both should depend on the abstraction
 - abstraction should not depend on implementation, it should be the opposite
 
+### Violation
 
+```
+class LightBulb {
+    private boolean isOn = false;
+    public void turnOn() {
+        System.out.println("Light bulb is on");
+    }
 
-# Pillars of OOP<br>
-## Abstraction<br>
-- the process of simplifying complex reality by modeling classes based on the essential properties and behaviors while hiding the unnecessary details<br>
-## Inheritance<br>
-- allows you to create a new class (subclass or derived class) by inheriting properties and behaviors (fields and methods) from an existing class (superclass or base class).<br>
-- It supports the concept of code reuse and is used to establish an "is-a" relationship between classes.<br>
-## Encapsulation<br>
-- bundling data (attributes or fields) and methods (functions) that operate on that data into a single unit<br>
-## Polymorphism<br>
-- the ability of objects to take on multiple forms<br>
+    public void turnOff() {
+        System.out.println("Light bulb is off");
+    }
 
+    public boolean isOn() {
+        return isOn;
+    }
+}
+public class Switch {
+    private LightBulb bulb;
+
+    public Switch() {
+        this.bulb = new LightBulb();
+    }
+
+    public void operate() {
+        if (bulb != null) {
+            if (bulb.isOn()) {
+                bulb.turnOff();
+            } else {
+                bulb.turnOn();
+            }
+        }
+    }
+}
+```
+
+### Solution
+
+```
+public interface SwitchableDevice {
+    void turnOn();
+    void turnOff();
+    boolean isOn();
+}
+public class LightBulb implements SwitchableDevice {
+    private boolean on = false;
+
+    @Override
+    public void turnOn() {
+        on = true;
+        System.out.println("Light bulb is on");
+    }
+
+    @Override
+    public void turnOff() {
+        on = false;
+        System.out.println("Light bulb is off");
+    }
+
+    @Override
+    public boolean isOn() {
+        return on;
+    }
+}
+public class Switch {
+    private SwitchableDevice device;
+
+    public Switch(SwitchableDevice device) {
+        this.device = device;
+    }
+
+    public void operate() {
+        if (device != null) {
+            if (device.isOn()) {
+                device.turnOff();
+            } else {
+                device.turnOn();
+            }
+        }
+    }
+}
+```
