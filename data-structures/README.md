@@ -8,6 +8,7 @@
 - [Queue](#queue)
   - [Linked List](#linkedlist)
 - [Set](#set)
+- [Map](#map)
   
 ## Arrays
 - size is fixed
@@ -143,3 +144,26 @@ for HashSet
   - Space : O(1)
   
 ## Map
+- collection of key-value paair, key is unique
+- each key maps to one value
+- implemented by HashTable, HashMap, SortedMap
+
+[Example Usage](https://github.com/Euna-Islam/code-mastery/blob/main/data-structures/src/main/java/com/euna/JavaMaps.java)
+
+### HashTable
+- HashTable does not allow Null 
+- it can face performance issue because it's synchronized
+
+### HashMap
+- HashMap allows null, not synchronized. 
+- LinkedHashMap extends HashMap, it uses double linked list
+- Key goes through hash function and produces hash code
+- have to override hashCode() in every class which overrides equals()
+
+### Time and Space Complexity
+- put, get, remove
+  - Time: O(1) average case, O(n) worst case
+  - Space: O(1)
+
+### SortedMap
+- has total ordering of elements
