@@ -1,9 +1,12 @@
-# Data Structures
+# Data Structures in Java
 
 ## Table of Contents
 - [Arrays](#arrays)
 - [List](#list)
+  - [ArrayList](#arraylist)
 - [Stack](#stack)
+- [Queue](#queue)
+  - [Linked List](#linkedlist)
   
 ## Arrays
 - size is fixed
@@ -68,28 +71,28 @@
 
 #### Time/Space Complexity
 - Access by index
- - Time: O(1)
- - Space: O(1)
+  - Time: O(1)
+  - Space: O(1)
  
 - Insert/remove at the end
- - Time: O(1)(amortized)
- - Space: O(1)
+  - Time: O(1)(amortized)
+  - Space: O(1)
  
 - Insert/remove in middle
- - Time: O(n)
- - Space: O(1)
+  - Time: O(n)
+  - Space: O(1)
  
 - Search(linear, unsorted)
- - Time: O(n)
- - Space: O(1)
+  - Time: O(n)
+  - Space: O(1)
  
 - Search(binary, sorted)
- - Time: O(log n)
- - Space: O(1)
+  - Time: O(log n)
+  - Space: O(1)
  
 - Doubling Size
- - Time: O(n)
- - Space: O(n)
+  - Time: O(n)
+  - Space: O(n)
 
 ## Stack
 - LIFO(Last in first out)
@@ -103,4 +106,19 @@
 - push, pop, peek, empty
   - Time: O(1)
   - Space: O(1)
+  
+## Queue
+- FIFO(First in first out)
+- implements Collection interface
 
+### LinkedList
+- implements queue and has multiple nodes(doubly-linked)
+
+### Time and Space Complexity
+- poll, peek, add
+  - Time: O(1)
+  - Space: O(1)
+  
+- remove
+  - Time: O(n)
+  - Space: O(1)
