@@ -7,6 +7,7 @@
 - [Stack](#stack)
 - [Queue](#queue)
   - [Linked List](#linkedlist)
+- [Set](#set)
   
 ## Arrays
 - size is fixed
@@ -114,6 +115,8 @@
 ### LinkedList
 - implements queue and has multiple nodes(doubly-linked)
 
+[Example Usage](https://github.com/Euna-Islam/code-mastery/blob/main/data-structures/src/main/java/com/euna/JavaQueues.java)
+
 ### Time and Space Complexity
 - poll, peek, add
   - Time: O(1)
@@ -122,3 +125,21 @@
 - remove
   - Time: O(n)
   - Space: O(1)
+  
+## Set
+- does not allow duplicate elements
+- extends Collection(and restricts duplicate elements)
+
+[Example Usage](https://github.com/Euna-Islam/code-mastery/blob/main/data-structures/src/main/java/com/euna/JavaSets.java)
+
+### Time and Space Complexity
+for HashSet
+- Size
+  - Time : O(1)
+  - Space : O(1)
+  
+- Add, remove, contains
+  - Time : O(1) average case, O(n) worst case.
+  - Space : O(1)
+  
+## Map
