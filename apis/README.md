@@ -41,9 +41,41 @@
 #### Body
 - contains actual data or content client wants or error message
 
-## Why use APIs
+## Types of APIs
+- depending on who has access to them, there can be: private, public and partner APIs
 
-- 
+## architectural styles
+- APIs can be categorized based on their architectural styles as well
+
+#### SOAP
+
+#### REST
+
+#### GraphQL
+
+#### WebHooks
+
+#### gRPC
+
+#### Web Sockets
+
+#### MQTT
+
+#### others
+
+## API Use Cases
+
+## API-first strategy
+
+## Important Differences
+
+### SOAP vs REST
+
+### APIs vs Webhooks
+
+### SOA vs Microservice
+
+##
 
 ### References
-[1] Postman (https://www.postman.com/what-is-an-api/)
+[1] [Postman](https://www.postman.com/what-is-an-api/)
