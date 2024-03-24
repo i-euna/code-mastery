@@ -1,9 +1,17 @@
 # On APIs
-
 - set of protocols for software components to communicate and transfer data
 - the work by sharing data through a request and response cycle
 
-## how APIs work
+## Table of Content
+- [How APIs work](#how-apis-work)
+- [API Request](#api-request)
+- [API Response](#api-response)
+- [Architectural Styles](#architectural-styles)
+- [API Use Cases](#api-use-cases)
+- [API-first strategy](#api-first-strategy)
+- [Important Differences](#important-differences)
+
+## How APIs Work
 - client  sends a request to API server
 - a request has the following components: Endpoint, Method, Parameter, Header, Body
 - API server handles authentication, validates input and fetches/ manipulates data
@@ -44,16 +52,30 @@
 ## Types of APIs
 - depending on who has access to them, there can be: private, public and partner APIs
 
-## architectural styles
+## Architectural Styles
 - APIs can be categorized based on their architectural styles as well
 
 #### SOAP
-
+- simple Object Access Protocol
+- uses XML to transfer highly structured messages
+- slower than other styles
+- has advanced security features
+- used in legacy systems/enterprise
+  
 #### REST
+- resources are accessed via endpoints
+- operations are performed on the resources with standard HTTP methods
 
 #### GraphQL
+- open source query language
+- lets the clients fetch the exact data they need via a single endpoint
+- does not chain multiple requests together
+- reduces the number of round trips between client and server
+- useful if the app is running on slow or unreliable networks
 
 #### WebHooks
+- used to implement event-driven architecture
+- 
 
 #### gRPC
 
@@ -65,7 +87,7 @@
 
 ## API Use Cases
 
-## API-first strategy
+## API-first Strategy
 
 ## Important Differences
 
