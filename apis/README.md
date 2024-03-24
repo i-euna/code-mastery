@@ -80,6 +80,16 @@
   - Consistent interface: HTTP methods like GET, POST, and DELETE help make interactions between clients and servers simple and consistent
   - Emphasis on resources: RESTful APIs are resource-based, rather than method-based or function-based. A resource can be an object, entity, or data within a system. Resources are uniquely identified using a Uniform Resource Identifier (URI), and HTTP methods are used to perform CRUD operations (create, read, update, delete) on them.
   - Support for standard media types: Resources are represented using standard media types, such as JSON, XML, or plain text. Clients can request that servers deliver a response in their preferred media type.
+- Advantage
+  - Scalability: The stateless nature of REST APIs means that the session state does not need to be shared or synchronized across various instances, which makes horizontal scaling easier. As a result, you can add additional servers during peak traffic without any disruption to functionality or risk of losing any important session state.
+  - Universal conventions: Applications that follow standardized, universal conventions provide a much better developer experience and improve the system’s maintainability. Having a consistent interface also improves interoperability and makes it easier for various systems to communicate with one another.
+  - Interoperability: Any client that supports HTTP can use a RESTful API, regardless of its platform or programming language.
+  - Improved performance: Latency and server load can be drastically reduced by caching server responses. This leads to better performance and user experience, as well as cost savings from minimized computational overhead.
+    
+- Disadvantage
+  - Incompatibility with real-time functionality
+  - Significant overhead with binary data transfer
+  - Reliance on HTTP
 
 #### GraphQL
 - open source query language
