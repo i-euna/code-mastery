@@ -62,10 +62,24 @@
 - slower than other styles
 - has advanced security features
 - used in legacy systems/enterprise
+- systems that have strict API security requirements and regulations may benefit from a SOAP-based approach because of its built-in security measures
+- its support for WS-Security and strongly typed contracts make SOAP a better fit for systems that send and receive highly sensitive data
   
 #### REST
+- architectural style that provides a set of guidelines, conventions, and best practices for developing well-designed networked applications
 - resources are accessed via endpoints
 - operations are performed on the resources with standard HTTP methods
+- a better option for apps that need CRUD operation
+- ability to cache responses makes it a good fit for high-demand applications where certain requests are made frequently
+- APIs that are designed according to REST principles are referred to as 'RESTful API'
+- Features:
+  - Statelessness: The server should not need to store any information about the client’s state. Rather than storing session information, a client should provide all the necessary details in its request
+  - Separation of concerns: The client and server should be properly decoupled from each other, which allows each one to evolve independently
+  - Layered architecture: Software architecture should be split into layers with their distinct purpose, which helps keep the system modular and maintainable
+  - Cache support: Responses can be cached on the client to improve an application’s performance and remove the need to re-process repeated requests
+  - Consistent interface: HTTP methods like GET, POST, and DELETE help make interactions between clients and servers simple and consistent
+  - Emphasis on resources: RESTful APIs are resource-based, rather than method-based or function-based. A resource can be an object, entity, or data within a system. Resources are uniquely identified using a Uniform Resource Identifier (URI), and HTTP methods are used to perform CRUD operations (create, read, update, delete) on them.
+  - Support for standard media types: Resources are represented using standard media types, such as JSON, XML, or plain text. Clients can request that servers deliver a response in their preferred media type.
 
 #### GraphQL
 - open source query language
