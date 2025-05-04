@@ -5,6 +5,7 @@
   - [Scaling Techniques](#scaling-techniques)
 - [Types of Scalability](#types-of-scalability)
 - [Direction of Scalability](#direction-of-scalability)
+- [Dimension of Scaling](#dimension-of-scaling)
 - [Challenges](#challenges-in-scaling)
 - [Strategies](#strategies-for-effective-scaling)
 - [CAP Theorem](#cap-theorem)
