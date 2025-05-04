@@ -54,6 +54,16 @@ Compute | Handling heavier computation | Spreading computation over multiple nod
 Networking | Handling more network traffic | Load balancing, CDN distribution
 Team/Process | Engineering teams growing to handle system growth | Microservices split based on team ownership
 
+## Dimension of Scaling
+
+| Dimension                   | Meaning                                                  | Example                                   |
+| --------------------------- | -------------------------------------------------------- | ----------------------------------------- |
+| **Performance Scalability** | Can the system handle more load with acceptable latency? | Faster database queries, async processing |
+| **Operational Scalability** | Can we manage the system as it grows?                   | Kubernetes, CI/CD pipelines               |
+| **Development Scalability** | Can the team keep developing quickly as the codebase grows?  | Clear ownership, modular architecture     |
+| **Cost Scalability**        | Does cost grow linearly or better with traffic?          | Spot instances, serverless functions      |
+
+
 ## Challenges in Scaling
 - **Data Consistency**: In distributed systems, ensuring data remains consistent across nodes (e.g., eventual consistency vs. strong consistency).
 - **Load Balancing**: Efficiently distributing workloads across resources to avoid bottlenecks.
