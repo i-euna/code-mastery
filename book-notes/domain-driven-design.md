@@ -4,7 +4,7 @@
 - [Crunching Knowledge](#crunching-knowledge)
 - [Communication and the Use of Language](#communication-and-the-use-of-language)
 - [Binding Model and Implementation](#binding-model-and-implementation)
-- [Isolating the Domain]
+- [Isolating the Domain](#isolating-the-domain)
   
 ## Crunching Knowledge
 **Collaboration is Crucial**
